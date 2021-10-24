@@ -6,18 +6,17 @@ addons:
   ssh_known_hosts:
   - 47.101.147.73
 before_install:
+- chmod 600 ~/.ssh/id_rsa
+
+- apt-get install sshpass
+
 - openssl aes-256-cbc -K $encrypted_84adcc736132_key -iv $encrypted_84adcc736132_iv
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 
-- eval "$(ssh-agent -s)"
-
-- chmod 600 ~/.ssh/id_rsa
-# t
-- ssh-add ~/.ssh/id_rsa
 install:
 - pip install -r requirements.txt
 script:
 - python test.py
 after_success:
-- ssh zhangkang@47.101.147.73 "bash ~/DialogueRobot/deploy.sh"
+- sshpass -p 'zhangkang' ssh zhangkang@47.101.147.73 "bash ~/DialogueRobot/deploy.sh"
 
