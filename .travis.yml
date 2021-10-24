@@ -12,6 +12,7 @@ before_install:
   -in id_rsa.enc -out ~/.ssh/id_rsa -d
 
 - chmod 600 ~/.ssh/id_rsa
+
 install:
 - pip install -r requirements.txt
 script:
