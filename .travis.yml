@@ -19,5 +19,5 @@ install:
 script:
 - python test.py
 after_success:
-- ssh zhangkang@47.101.147.73 
+- ssh zhangkang@47.101.147.73 "bash ~/DialogueRobot/deploy.sh"
 
