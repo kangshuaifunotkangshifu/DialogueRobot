@@ -15,11 +15,12 @@ install:
 script:
 - python test.py
 after_success:
-- echo '#!/bin/bash' >> test.sh
-- echo 'trap "pkill -f $(basename $0);exit 1" SIGINT SIGTERM EXIT ERR' >> test.sh
-- echo 'ssh zhangkang@47.101.147.73 -o StrictHostKeyChecking=no "bash ~/DialogueRobot/deploy.sh" &' >> test.sh
-- echo 'echo "OK"' >> test.sh
-- bash test.sh
-#- ssh zhangkang@47.101.147.73 -o StrictHostKeyChecking=no "bash ~/DialogueRobot/deploy.sh" 
+# - echo '#!/bin/bash' >> test.sh
+# - echo 'trap "pkill -f $(basename $0);exit 1" SIGINT SIGTERM EXIT ERR' >> test.sh
+# - echo 'ssh zhangkang@47.101.147.73 -o StrictHostKeyChecking=no "bash ~/DialogueRobot/deploy.sh" &' >> test.sh
+# - echo 'echo "OK"' >> test.sh
+# - bash test.sh
+
+- ssh zhangkang@47.101.147.73 -o StrictHostKeyChecking=no "bash ~/DialogueRobot/deploy.sh" 
 #- sshpass -p 'zhangkang' ssh zhangkang@47.101.147.73 "bash ~/DialogueRobot/deploy.sh"
 
