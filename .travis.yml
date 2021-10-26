@@ -20,7 +20,6 @@ after_success:
 - echo 'ssh zhangkang@47.101.147.73 -o StrictHostKeyChecking=no "bash ~/DialogueRobot/deploy.sh" &' >> test.sh
 - echo 'echo "OK"' >> test.sh
 - bash test.sh
-
 #- ssh zhangkang@47.101.147.73 -o StrictHostKeyChecking=no "bash ~/DialogueRobot/deploy.sh" 
 #- sshpass -p 'zhangkang' ssh zhangkang@47.101.147.73 "bash ~/DialogueRobot/deploy.sh"
 
