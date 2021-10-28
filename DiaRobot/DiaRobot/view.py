@@ -6,10 +6,7 @@ from wechatpy.utils import check_signature
 from wechatpy.exceptions import InvalidSignatureException
 from wechatpy.replies import BaseReply
 
-# 以下两个是自己定义的模块，位于wechat.util包下，分别处理文本和事件消息
-#from mywechat.util import reply_text, reply_event
-
-TOKEN = 'dengzhouzhang'  # 这里要指定一个token，后续填入到微信平台中
+TOKEN = 'dengzhouzhang'
 
 @csrf_exempt
 def handle_wx(request):
@@ -34,10 +31,10 @@ def handle_wx(request):
 		# 判断消息类型，文本消息则调用reply_text进行处理
         if msg.type == 'text':
             #reply = reply_text.do_reply(msg)
-            reply = create_reply('文本消息', msg)
-        elif msg.type == 'event':
+            reply = create_reply('文本消息' + msg.content, msg)
+        elif msg.type == 'voice':
             #reply = reply_event.do_reply(msg)
-            reply = create_reply('事件消息', msg)
+            reply = create_reply('语音消息', msg)
         else:
             pass
         if not reply or not isinstance(reply, BaseReply):
