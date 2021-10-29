@@ -7,7 +7,6 @@ tmux send-keys "cd ~/DialogueRobot/DiaRobot" C-m
 tmux send-keys "sudo ~/.conda/envs/robot/bin/python manage.py makemigrations" C-m
 tmux send-keys "sudo ~/.conda/envs/robot/bin/python manage.py migrate" C-m
 tmux send-keys "sudo ~/.conda/envs/robot/bin/python manage.py runserver 0.0.0.0:80" C-m
-
 # port=8000
 # pid=$(netstat -nlp | grep :$port | awk '{print $7}' | awk -F"/" '{print $1}')
 # if [ -n "$pid" ]; then
