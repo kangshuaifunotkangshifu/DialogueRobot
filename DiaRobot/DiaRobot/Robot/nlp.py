@@ -1,8 +1,8 @@
 from enum import Enum
-from DiaRobot.navigation import Navigation
-from DiaRobot.query import Query
-from DiaRobot.reserve import Reserve
-from DiaRobot.recommend import Recommend
+from DiaRobot.Robot.navigation import Navigation
+from DiaRobot.Robot.query import Query
+from DiaRobot.Robot.reserve import Reserve
+from DiaRobot.Robot.recommend import Recommend
 
 class Status(Enum):
     prepro = 1
