@@ -15,7 +15,7 @@ install:
 - pip install -r requirements.txt
 script:
 - cd DiaRobot
-- python manage.py test Test
+- python manage.py test
 after_success:
 - echo '#!/bin/bash' >> test.sh
 - echo 'trap "pkill -f $(basename $0);exit 1" SIGINT SIGTERM EXIT ERR' >> test.sh
